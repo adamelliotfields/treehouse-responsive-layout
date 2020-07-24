@@ -28,7 +28,7 @@ You can view hosted site [here](https://adamelliotfields.github.io/treehouse-res
 
 You can also simply open `index.html` in your browser directly. For example, if your macOS user name
 is `adam` and you cloned the repo in `~/Downloads`, then go to
-<file:///Users/adam/Downloads/treehouse-responsive-layout/index.html> in your web browser.
+`file:///Users/adam/Downloads/treehouse-responsive-layout/index.html` in your web browser.
 
 You can also use PHP or Python's built-in HTTP server by running one of these commands in the same
 directory as `index.html`.
