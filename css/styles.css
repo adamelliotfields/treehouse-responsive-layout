@@ -1,0 +1,351 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: defaults
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+  color: black;
+  /* Montserrat Google font plus standard sans-serif system fonts. */
+  font-family: Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  font-size: 16px;
+  margin: 0;
+  /* Offset the height of the navbar. */
+  padding-top: 211px;
+}
+
+/*
+ * The navbar is a flex element with 2 children: the student's name and a list of links.
+ * On mobile, both the navbar and the list should be columns, with children centered.
+ * On tablet, the navbar should be a column, and the list should be a row, with children centered.
+ * On desktop, both the navbar and the list should be a single row, with the list aligned right.
+ */
+.navbar {
+  align-items: center;
+  background-color: #f8d47d;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 30px;
+  position: fixed;
+  /* Fix the navbar to the top of the document. */
+  top: 0;
+  width: 100%;
+  /* Z-index doesn't have to be a huge number, just greater than any other indices. */
+  z-index: 1;
+}
+
+.navbar-list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.navbar-name {
+  font-family: Merriweather, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 auto;
+  /* Never wrap the name, even if the screen is tiny. */
+  white-space: nowrap;
+}
+
+.navbar-list-item {
+  padding: 0.5rem;
+}
+
+.navbar-link {
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar-link:hover {
+  color: gray;
+}
+
+/* Header section. */
+.header {
+  margin-top: 2rem;
+}
+
+.header .lead {
+  margin: 0;
+}
+
+/* Larger and thinner text to stand out. */
+.lead {
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* Section title. */
+.title {
+  color: #e88a68;
+  font-family: Merriweather, serif;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.lead,
+.title {
+  font-size: 1.5rem;
+}
+
+/* Image class used for figure elements. */
+.image {
+  margin: 0;
+}
+
+.image img {
+  max-width: 100%;
+}
+
+/* Main section has a white background to stand out. */
+.main {
+  background-color: white;
+  padding: 30px;
+  max-width: calc(100vw - 60px);
+}
+
+/* Skills section. */
+.skills {
+  padding: 30px;
+}
+
+/* Progress bar used in the skills section. */
+.progress {
+  background-color: #ededed;
+  display: flex;
+  height: 1rem;
+  /* Need to set width to 100% because it is in a flex container. */
+  width: 100%;
+}
+
+.progress-bar {
+  background-color: #f8d47d;
+}
+
+.progress-label {
+  margin: 0 1rem 0 0;
+  /* Because the progress bar is 100% width, we need each label to take a uniform amount of space. */
+  width: 50%;
+  text-align: right;
+}
+
+/* Contact section. */
+.contact {
+  border-bottom: 1px solid #808080;
+  max-width: calc(100vw - 60px);
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.contact a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  color: #e88a68;
+  text-decoration: underline;
+}
+
+/*
+ * The footer is similar to the Navbar, except it is always a row.
+ * On mobile viewports, only the back-to-top link is shown.
+ * The links are toggled using responsive utility classes.
+ */
+.footer {
+  align-items: center;
+  display: flex;
+  padding: 1rem 30px;
+  width: 100%;
+}
+
+.footer-list {
+  display: flex;
+  list-style-type: none;
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+
+.footer-name {
+  margin: 0;
+  /* Never wrap the name, even if the screen is tiny. */
+  white-space: nowrap;
+}
+
+.footer-list-item {
+  padding: 0.5rem;
+}
+
+.footer-link {
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #e88a68;
+}
+
+/* Grid. */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-right: -30px;
+}
+
+.column {
+  flex-basis: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-bottom: 2rem;
+  max-width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* Utilities. */
+.is-flex {
+  display: flex;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.has-content-center {
+  justify-content: center;
+}
+
+.has-items-center {
+  align-items: center;
+}
+
+.has-text-center {
+  text-align: center;
+}
+
+/* Tablet. */
+@media (min-width: 768px) {
+  body {
+    padding-top: 100px;
+  }
+
+  .navbar-list {
+    flex-direction: row;
+    margin: 0 auto;
+  }
+
+  .header .lead {
+    margin: 0 0 0 30px;
+  }
+
+  .lead,
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .column.is-one-third-tablet {
+    flex-basis: 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+
+  .column.is-one-half-tablet {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  .column.is-two-thirds-tablet {
+    flex-basis: 66.6666666667%;
+    max-width: 66.6666666667%;
+  }
+
+  .is-hidden-tablet {
+    display: none;
+  }
+
+  .is-list-item-tablet {
+    display: list-item;
+  }
+
+  .has-text-right-tablet {
+    text-align: right;
+  }
+}
+
+/* Desktop. */
+@media (min-width: 1024px) {
+  body {
+    padding-top: 69px;
+  }
+
+  .navbar {
+    flex-direction: row;
+  }
+
+  .navbar-name {
+    margin: 0;
+  }
+
+  .navbar-list {
+    margin: 0 0 0 auto;
+  }
+
+  .lead,
+  .title {
+    font-size: 2rem;
+  }
+
+  .lead {
+    line-height: 1.375;
+  }
+
+  .column.is-one-half-desktop {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  .column.is-one-third-desktop {
+    flex-basis: 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+}
+
+/* Widescreen. */
+@media (min-width: 1280px) {
+  .column.is-one-third-widescreen {
+    flex-basis: 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+
+  .column.is-two-thirds-widescreen {
+    flex-basis: 66.6666666667%;
+    max-width: 66.6666666667%;
+  }
+}
