@@ -16,9 +16,8 @@
 The second unit demonstrates using HTML and CSS to make a mobile-first, responsive web site from
 scratch.
 
-All CSS code is hand-written and the layout must match the mocks. A Bootstrap-like grid is used to
-achieve the responsive layout by setting `flex-basis` and `max-width` to a percentage of the
-viewport using `min-width` media queries.
+All CSS code is hand-written and the layout must match the mocks. CSS Grid is used for layout, with
+some flexbox used as well.
 
 The HTML and CSS code must pass W3C validation.
 
@@ -44,6 +43,18 @@ python -m SimpleHTTPServer
 python3 -m http.server
 ```
 
+## Live Reloading
+
+If you have Node.js and NPM installed, you can use [Browsersync](https://browsersync.io) to start a
+live reload server.
+
+```bash
+npm i -g browser-sync
+
+# Run this in the same directory as index.html
+browser-sync . -w
+```
+
 ## Validating HTML and CSS
 
 Use the [W3C HTML](https://validator.w3.org/#validate_by_input) and
@@ -52,5 +63,6 @@ into the text input.
 
 ## Browser Compatibility
 
-The CSS has been vendor prefixed using [Autoprefixer](https://autoprefixer.github.io) using the
-[defaults](https://browsersl.ist/?q=defaults) browsers list.
+- Chrome 84
+- Firefox 79
+- Safari 13
