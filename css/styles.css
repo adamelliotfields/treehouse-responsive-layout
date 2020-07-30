@@ -21,7 +21,7 @@ body {
   font-size: 16px;
   margin: 0;
   /* Offset the height of the navbar. */
-  padding-top: 211px;
+  padding-top: 207px;
 }
 
 /*
@@ -35,6 +35,7 @@ body {
   background-color: #f8d47d;
   display: flex;
   flex-direction: column;
+  height: 207px;
   padding: 1rem 30px;
   position: fixed;
   /* Fix the navbar to the top of the document. */
@@ -75,13 +76,35 @@ body {
   color: gray;
 }
 
+/* Container to center content and provide horizontal padding. */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.grid {
+  display: grid;
+}
+
 /* Header section. */
 .header {
   margin-top: 2rem;
 }
 
+.header .grid {
+  grid-template-columns: 1fr;
+}
+
 .header .lead {
-  margin: 0;
+  margin: 0 0 2rem 0;
+  align-self: center;
+}
+
+.header .image {
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 /* Larger and thinner text to stand out. */
@@ -122,9 +145,25 @@ body {
   max-width: calc(100vw - 60px);
 }
 
+.main .grid {
+  gap: 30px;
+  grid-template-columns: 1fr;
+}
+
+.main .grid > div {
+  text-align: center;
+}
+
 /* Skills section. */
 .skills {
   padding: 30px;
+}
+
+.skills .grid {
+  align-items: center;
+  gap: 1rem;
+  grid-template-columns: 105px 1fr;
+  justify-content: center;
 }
 
 /* Progress bar used in the skills section. */
@@ -141,9 +180,7 @@ body {
 }
 
 .progress-label {
-  margin: 0 1rem 0 0;
-  /* Because the progress bar is 100% width, we need each label to take a uniform amount of space. */
-  width: 50%;
+  margin: 0;
   text-align: right;
 }
 
@@ -153,6 +190,10 @@ body {
   max-width: calc(100vw - 60px);
   padding-bottom: 30px;
   padding-top: 30px;
+}
+
+.contact > div {
+  text-align: center;
 }
 
 .contact a {
@@ -192,7 +233,12 @@ body {
 }
 
 .footer-list-item {
+  display: none;
   padding: 0.5rem;
+}
+
+.footer-list-item:first-child {
+  display: list-item;
 }
 
 .footer-link {
@@ -205,56 +251,14 @@ body {
   color: #e88a68;
 }
 
-/* Grid. */
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  margin-right: -30px;
-}
-
-.column {
-  flex-basis: 100%;
-  flex-grow: 0;
-  flex-shrink: 0;
-  margin-bottom: 2rem;
-  max-width: 100%;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-/* Utilities. */
-.is-flex {
-  display: flex;
-}
-
-.is-hidden {
-  display: none;
-}
-
-.has-content-center {
-  justify-content: center;
-}
-
-.has-items-center {
-  align-items: center;
-}
-
-.has-text-center {
-  text-align: center;
-}
-
 /* Tablet. */
 @media (min-width: 768px) {
   body {
-    padding-top: 100px;
+    padding-top: 99px;
+  }
+
+  .navbar {
+    height: 99px;
   }
 
   .navbar-list {
@@ -262,8 +266,16 @@ body {
     margin: 0 auto;
   }
 
+  .header .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .header .lead {
-    margin: 0 0 0 30px;
+    margin: 0 0 2rem 30px;
+  }
+
+  .header .image {
+    text-align: right;
   }
 
   .lead,
@@ -271,42 +283,28 @@ body {
     font-size: 1.75rem;
   }
 
-  .column.is-one-third-tablet {
-    flex-basis: 33.3333333333%;
-    max-width: 33.3333333333%;
+  .main .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .column.is-one-half-tablet {
-    flex-basis: 50%;
-    max-width: 50%;
-  }
-
-  .column.is-two-thirds-tablet {
-    flex-basis: 66.6666666667%;
-    max-width: 66.6666666667%;
-  }
-
-  .is-hidden-tablet {
-    display: none;
-  }
-
-  .is-list-item-tablet {
+  .footer-list-item {
     display: list-item;
   }
 
-  .has-text-right-tablet {
-    text-align: right;
+  .footer-list-item:first-child {
+    display: none;
   }
 }
 
 /* Desktop. */
 @media (min-width: 1024px) {
   body {
-    padding-top: 69px;
+    padding-top: 68px;
   }
 
   .navbar {
     flex-direction: row;
+    height: 68px;
   }
 
   .navbar-name {
@@ -326,26 +324,18 @@ body {
     line-height: 1.375;
   }
 
-  .column.is-one-half-desktop {
-    flex-basis: 50%;
-    max-width: 50%;
+  .main .grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .column.is-one-third-desktop {
-    flex-basis: 33.3333333333%;
-    max-width: 33.3333333333%;
+  .skills.container {
+    max-width: 50%;
   }
 }
 
 /* Widescreen. */
 @media (min-width: 1280px) {
-  .column.is-one-third-widescreen {
-    flex-basis: 33.3333333333%;
-    max-width: 33.3333333333%;
-  }
-
-  .column.is-two-thirds-widescreen {
-    flex-basis: 66.6666666667%;
-    max-width: 66.6666666667%;
+  .header .grid {
+    grid-template-columns: 2fr 1fr;
   }
 }
